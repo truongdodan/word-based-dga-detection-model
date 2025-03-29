@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 import re
@@ -8,23 +9,26 @@ import joblib
 from flask import Flask, request, render_template
 from urllib.parse import urlparse
 
+# Get the absolute path relative to the script's location
+current_dir = os.path.dirname(__file__)  # Directory of the current script
+
 # Get dictionary
-with open(r"D:\HOCTAP\Machine_Learning\detect_word-based_dga\dictionary\english_dict.txt") as file: # Get english_dict.txt
+with open(os.path.join(current_dir, "../dictionary/english_dict.txt")) as file: # Get english_dict.txt
     english_dict = [line.strip() for line in file] 
 
-with open(r"D:\HOCTAP\Machine_Learning\detect_word-based_dga\dictionary\noun_dict.txt") as file: # Get noun_dict.txt
+with open(os.path.join(current_dir, "../dictionary/noun_dict.txt")) as file: # Get noun_dict.txt
     noun_dict = [line.strip() for line in file] 
 
-with open(r"D:\HOCTAP\Machine_Learning\detect_word-based_dga\dictionary\verb_dict.txt") as file: # Get verb_dict.txt
+with open(os.path.join(current_dir, "../dictionary/verb_dict.txt")) as file: # Get verb_dict.txt
     verb_dict = [line.strip() for line in file] 
 
-with open(r"D:\HOCTAP\Machine_Learning\detect_word-based_dga\dictionary\adj_dict.txt") as file: # Get adj_dict.txt
+with open(os.path.join(current_dir, "../dictionary/adj_dict.txt")) as file: # Get adj_dict.txt
     adj_dict = [line.strip() for line in file] 
 
-with open(r"D:\HOCTAP\Machine_Learning\detect_word-based_dga\dictionary\dga_dict.txt") as file: # Get dga_dict.txt
+with open(os.path.join(current_dir, "../dictionary/dga_dict.txt")) as file: # Get dga_dict.txt
     dga_dict = [line.strip() for line in file] 
 
-with open(r"D:\HOCTAP\Machine_Learning\detect_word-based_dga\dictionary\private_dict.txt") as file: # Get private_dict.txt
+with open(os.path.join(current_dir, "../dictionary/private_dict.txt")) as file: # Get private_dict.txt
     private_dict = [line.strip() for line in file]
 
 # Extract works from domain name
@@ -72,8 +76,9 @@ def feature_extraction(domain_name):
         }
     return pd.DataFrame([features])
 
-# Load model 
-model = joblib.load(r"D:\HOCTAP\Machine_Learning\detect_word-based_dga\code\dga_detecting_model.pkl")
+
+# Load the model
+model = joblib.load(os.path.join(current_dir, "dga_detecting_model.pkl"))
 
 # Extract domain name from URL
 def extract_domain(url):
