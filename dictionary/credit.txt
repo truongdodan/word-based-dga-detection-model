@@ -1,0 +1,2 @@
+english_dict: https://github.com/ManiacDC/TypingAid/tree/master
+nouns, verb, adj: https://gist.github.com/hugsy/8910dc78d208e40de42deb29e62df913?permalink_comment_id=4405656

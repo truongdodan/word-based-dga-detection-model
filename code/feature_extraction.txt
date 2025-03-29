@@ -1,0 +1,16 @@
+f1: Length of domain name.
+f2: Total value in ASCII code of all characters.
+f3: Number of Vowels of domain name.
+f4: Vowel distribution of domain name with formula: f3/f1.
+f5: Number of digits and characters '-' in domain name.
+f6: Digit and character '-' distribution with formula: f5/f1.
+f7: Word extract from domain name and exist in english_dict - word_norm
+f8: Word extract from domain name and exist in dga_dict - word_dga
+f9: Word extract from domain name and exist in noun_dict - noun_count
+f10: Word extract from domain name and exist in verb_dict - verb_count
+f11: Word extract from domain name and exist in adj_dict - adj_count
+f12: Word extract from domain name and exist in private_dict - private_count
+f13: Ratio between word_dga and word_norm = word_dga/word_norm
+f14: Length of longest word in domain
+f15: Length of shortest word in domain
+f16: Ratio: len(word(d))/len(d)

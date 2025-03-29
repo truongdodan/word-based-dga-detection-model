@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGA prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <p id="title">Ain't this domain a litte Sussy?</p>
+    <form action="/predict" method="post">
+        <input type="text" id="url" name="url" placeholder="URL ..." required>
+        <button type="submit">Predict</button>
+    </form>
+    <br/>
+    {% if prediction_result %}
+        {% if prediction == 0 %}
+            <p>Domain "<b>{{ domain_name }}</b>" is predicted as: <span class="positive">{{ prediction_result }}</span></p>
+        {% else %}
+            <p>Domain "<b>{{ domain_name }}</b>" is predicted as: <span class="negative">{{ prediction_result }}</span></p>
+        {% endif %}
+
+    {% endif %}
+</body>
+</html>

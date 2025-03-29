@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#title {
+    font-size: 2rem;
+    font-weight: 550;
+    margin: 2rem 0;
+}
+
+form {
+    display: flex;
+}
+input[type="text"] {
+    border: none;
+    outline: none;
+    background-color: rgb(237, 237, 237);
+    padding: 0.5rem 1rem;
+    border-radius: 15px 0 0 15px;
+}
+form button {
+    border: none;
+    outline: none;
+    border-radius: 0 15px 15px 0;
+    padding: 0.25rem 1rem;
+    font-size: 0.75rem;
+    background-color: aliceblue;
+}
+
+.positive {
+    font-weight: 550;
+    color: #008000;
+}
+
+.negative {
+    font-weight: 550;
+    color: #FF2C2C;
+}
